@@ -18,6 +18,7 @@ from rest_framework.parsers import MultiPartParser
 from .models import Category
 from .models import Content
 from .models import Word
+from .models import Feedback
 
 from rest_framework.authtoken.models import Token
 from django.http import JsonResponse
@@ -330,3 +331,8 @@ class AddFeedbackAPIView(APIView):
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class GetAllFeedbackAPIView(APIView):
+    def get(self, request):
+        feedbacks = Feedback.objects.all()
+        serializer = FeedbackSerializer(feedbacks, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

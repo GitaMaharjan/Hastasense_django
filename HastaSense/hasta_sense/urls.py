@@ -25,6 +25,7 @@ from .views import Validate_token
 from .views import Validate_token_Staff
 from .views import UserUpdateAPIView
 from .views import AddFeedbackAPIView
+from .views import GetAllFeedbackAPIView
 
 
 # router = DefaultRouter()
@@ -79,8 +80,7 @@ urlpatterns = [
     path("alladmin/", AllAdminView.as_view(), name="all_admin"),
 
 
-
-
+    path('feedback/', GetAllFeedbackAPIView.as_view(), name='get_all_feedback'),
 
 
 ]

@@ -50,7 +50,7 @@ class FeedbackSerializer(serializers.ModelSerializer):
 
 
 
-# detection
-class DetectionResultSerializer(serializers.Serializer):
-    detected_sign = serializers.CharField()
-    detected_emotion = serializers.CharField()
+# # detection
+# class DetectionResultSerializer(serializers.Serializer):
+#     detected_sign = serializers.CharField()
+#     detected_emotion = serializers.CharField()
